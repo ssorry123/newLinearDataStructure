@@ -33,8 +33,7 @@
 ---
 
 ### ㅁ Contraints
-##### use int32_t, but, Item in List ==> 0 or positive
-
+##### use int32_t, but,,,
 <br>
 
 ---
