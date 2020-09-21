@@ -8,17 +8,18 @@
 
 typedef myint item;
 
+
 // LinkedList's Node
 typedef struct _my_LinkedList_node {
 	item val;	// default 0, can only 0 or positive
-	struct llnd* next;
+	struct _my_LinkedList_node * next;
 }mLLnd;
 
 // LinkedList
 typedef struct _my_LinkedList {
 	int size;
-	struct llnd* begin;
-	struct llnd* end;
+	mLLnd* begin;
+	mLLnd* end;
 }mLL;
 
 
@@ -29,7 +30,7 @@ mLL* create_linked_list();
 int destroy_linked_list(mLL* LL);
 
 
-// idx위치에 있는 item 검색
+// idx위치에 있는 item 검색, 실패시 -1(FAIL) 반환
 item search_linked_list(mLL* LL, int idx);
 // idx위치에, item 삽입, 성공 0, 실패 -1(FAIL) 반환
 int insert_linked_list(mLL* LL, int idx, item val);

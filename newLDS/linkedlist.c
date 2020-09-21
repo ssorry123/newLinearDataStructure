@@ -73,7 +73,7 @@ int insert_linked_list(mLL* LL, int idx, item val) {
 		int ret = _make_larger_(LL, idx);
 		if (ret == FAIL) {
 			errmsg("fail insert");
-			return;
+			return FAIL;
 		}
 	}
 
