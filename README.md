@@ -19,11 +19,13 @@
     - good  
     fast insert(at beginning, end)  
     fast insert(at mid) (searchtime+O(1))  
+    fast change   
     - so-so  
     slow search(indexing)
 1. Array  
     - good  
     fast search(indexing)  
+    fast change item (indexing)  
     fast insert(at end)  
     - so-so  
     slow insert(at beginning, middle)
@@ -33,13 +35,40 @@
 ---
 
 ### ㅁ Contraints
-##### use int32_t, but,,,
+##### use int32_t  
+##### must be able to express from negative to positive, and zero  
+
 <br>
 
 ---
 
 ### ㅁ Info of file (mean,, current status)
-#### preparing  
+### Common 
+- wrong order must be rejected and recorded
+- auto-initialize to zero
+#### Linked (v.0.1)  
+- for using, have to declare List Size  
+- can change size by user
+- insertion and deletion can cause auto size changes
+- singlely linked list
+- one-thread (no lock)
+
+#### Array (v.0.1)
+-
+#### nLDS (v.0.0)
+- 
+
+<br>
+
+---
+
+### ㅁ Process
+1. make normal Linked List & Array List
+1. make nLDS
+1. test
+1. compare
+1. improve nLDS
+1. and Repetition...  
 
 <br>
 
@@ -47,8 +76,7 @@
 
 ### ㅁ How  
 #### preparing  
-1. Accuracy  
-1. Efficiency
+
 
 <br>
 
