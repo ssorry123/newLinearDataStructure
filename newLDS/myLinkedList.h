@@ -26,9 +26,9 @@ typedef struct _my_LinkedList {
 
 /* define function */
 
-// 비어있는 LinkedList 생성,반환
+// size 크기의 LinkedList 생성,반환
 mLL* create_linked_list(int size); 
-// LinkedList 삭제.성공
+// LinkedList 삭제
 int destroy_linked_list(mLL* LL);
 // 리스트 크기 변경
 int rsize_linked_list(mLL* LL, int size);
