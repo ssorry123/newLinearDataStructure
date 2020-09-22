@@ -34,6 +34,11 @@ mLL* create_linked_list(int size) {
 
 
 int destroy_linked_list(mLL* LL) {
+    if (LL == NULL) {
+        printf("존재하지 않는 연결리스트 삭제 시도");
+        exit(-1);
+    }
+
     _del_from_to_NULL(LL->begin);
     free(LL);
     return 0;
