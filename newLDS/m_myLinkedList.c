@@ -26,7 +26,8 @@ int change_linked_list(mLL* LL, int idx, item val) {
 
 int insert_linked_list(mLL* LL, int idx, item val) {
     // 리스트의 끝 부분에서만 범위를 벗어난 삽입을 할 수 있다
-    if (idx < 0 || idx >= LL->size) {
+    // 즉, idx==size에 삽입할 수 있다(append)
+    if (idx < 0 || idx > LL->size) {
         errmsg("invalid array length");
         exit(-1);
     }
