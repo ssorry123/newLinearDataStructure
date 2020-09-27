@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <memory.h>
 #include <string.h>
+#include <stdio.h>
 
 // just double arr capacity
 int _double_capacity(mAL* AL) {
@@ -34,4 +35,15 @@ int _double_capacity(mAL* AL) {
     AL = ret;
     
     return 0;
+}
+
+void print_array_list_all(mAL* AL) {
+    printf("print array list\t size : %d, capacity : %d\n", AL->size, AL->capacity);
+
+    for (int i = 0; i < AL->size; ++i) {
+        printf("[%5d] == %5d\n", i ,AL->arr[i]);
+    }
+
+    printf("\nprint end\n");
+
 }
