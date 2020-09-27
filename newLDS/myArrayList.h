@@ -40,6 +40,7 @@ int insert_array_list(mAL* AL, int idx, item val);
 int remove_array_list(mAL* AL, int idx);
 
 
-/* sub function */
 
+/* sub function */
+void print_array_list_all(mAL* AL);
 int _double_capacity(mAL* AL);
