@@ -11,7 +11,7 @@ mLL* create_linked_list(int size) {
 
     mLL* ret = (mLL*)malloc(sizeof(mLL));
     if (ret == NULL) {
-        errmsg("연결리스트 생성1");
+        errmsg("making linked list1");
         exit(-1);
     }
 
@@ -35,7 +35,7 @@ mLL* create_linked_list(int size) {
 
 int destroy_linked_list(mLL* LL) {
     if (LL == NULL) {
-        printf("존재하지 않는 연결리스트 삭제 시도");
+        printf("LL is NULL");
         exit(-1);
     }
 

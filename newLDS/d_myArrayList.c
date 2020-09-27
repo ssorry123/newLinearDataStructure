@@ -13,7 +13,7 @@ mAL* create_array_list(int size) {
 
     mAL* ret = (mAL*)malloc(sizeof(mAL));
     if (ret == NULL) {
-        errmsg("배열리스트 생성1");
+        errmsg("making new array list1");
         exit(-1);
     }
 
@@ -26,7 +26,7 @@ mAL* create_array_list(int size) {
 
     ret->arr = (int*)malloc(sizeof(item) * capacity);
     if (ret->arr == NULL) {
-        errmsg("배열리스트 생성2");
+        errmsg("making new array list2");
         free(ret);
         exit(-1);
     }
@@ -39,7 +39,7 @@ mAL* create_array_list(int size) {
 
 int destroy_array_list(mAL* AL) {
     if (AL == NULL) {
-        printf("존재하지 않는 연결리스트 삭제 시도");
+        printf("AL is NULL");
         exit(-1);
     }
 
