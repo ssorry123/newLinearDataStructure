@@ -13,7 +13,7 @@ typedef myint item; // 모두 같은 자료형을 사용하도록,,
 // LinkedList's Node
 typedef struct _my_LinkedList_node {
     item val;	// default 0, can only 0 or positive
-    struct _my_LinkedList_node * next;
+    struct _my_LinkedList_node* next;
 }mLLnd;
 
 // LinkedList
@@ -47,7 +47,7 @@ int remove_linked_list(mLL* LL, int idx);
 
 
 //// sub function
-
+void print_linked_list_all(mLL * LL);
 mLLnd* _make_mLLnd(item val);
 mLLnd* _find_pointer(mLL* LL, int idx);
 int _del_from_to_NULL(mLLnd* pointer);
