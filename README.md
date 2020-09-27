@@ -22,15 +22,15 @@
     fast resize (no copy)
     - so-so  
     slow search(indexing)  
-    slow change(searchtime + O(1))
+    slow change(searchtime + O(1))  
 1. Array  
     - good  
     fast search(indexing)  
     fast change item (indexing)  
     fast insert(at end)  
     - so-so  
-    slow insert(at beginning, middle)
-    slow resize(O(n) copy)
+    slow insert(at beginning, middle)  
+    slow resize(O(n) copy)  
 
 <br>
 
