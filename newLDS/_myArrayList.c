@@ -11,29 +11,18 @@ int _double_capacity(mAL* AL) {
     if (capacity > MAXSIZE)
         capacity = MAXSIZE;
 
-    // make new arrlist
-    mAL* ret = (mAL*)malloc(sizeof(mAL));
-    if (ret == NULL) {
-        errmsg("double arr");
-        exit(-1);
-    }
-
     // make new arrlist's arr
-    ret->arr = (item*)malloc(sizeof(item) * capacity);
-    if (ret->arr == NULL) {
+    item* tmp = (item*)malloc(sizeof(item) * capacity);
+    if (tmp == NULL) {
         errmsg("double arr 2");
         exit(-1);
     }
 
-    // set return, also copy
-    ret->size = AL->size;
-    ret->capacity = capacity;
-    memset(ret->arr, 0, sizeof(item) * capacity);
-    memmove(ret->arr, AL->arr, sizeof(item) * (AL->size));
-    
-    destroy_array_list(AL);
-    AL = ret;
-    
+    memset(tmp, 0, sizeof(item) * capacity);
+    memmove(tmp, AL->arr, sizeof(item) * AL->size);
+    free(AL->arr);
+    AL->arr = tmp;
+    AL->capacity = capacity;
     return 0;
 }
 
@@ -41,7 +30,7 @@ void print_array_list_all(mAL* AL) {
     printf("print array list\t size : %d, capacity : %d\n", AL->size, AL->capacity);
 
     for (int i = 0; i < AL->size; ++i) {
-        printf("[%5d] == %5d\n", i ,AL->arr[i]);
+        printf("[%5d] == %5d\n", i, AL->arr[i]);
     }
 
     printf("\nprint end\n");
