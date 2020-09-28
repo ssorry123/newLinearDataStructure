@@ -56,7 +56,7 @@ int rsize_array_list(mAL* AL, int size) {
     }
     // 크기 변경이 없음
     if (size == AL->size) {
-        return 0;
+        return size;
     }
     // 0이하인 경우 파괴시킴
     if (size <= 0) {
@@ -70,5 +70,5 @@ int rsize_array_list(mAL* AL, int size) {
     destroy_array_list(AL);
     AL = ret;
 
-    return 0;
+    return AL->size;
 }

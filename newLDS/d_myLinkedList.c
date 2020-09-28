@@ -53,7 +53,7 @@ int rsize_linked_list(mLL* LL, int size) {
     }
     // 크기 변경이 없음
     if (size == LL->size) {
-        return 0;
+        return size;
     }
     // 0이하인 경우 파괴시킴
     if (size <= 0) {
@@ -68,7 +68,7 @@ int rsize_linked_list(mLL* LL, int size) {
         _del_from_to_NULL(LL->end->next);	// end의 next부터 모두 삭제
         LL->end = NULL;							// end->next 변경
         LL->size = size;
-        return 0;
+        return size;
     }
 
     if (size > LL->size) {
@@ -80,7 +80,7 @@ int rsize_linked_list(mLL* LL, int size) {
             LL->end = tmp;
             ++LL->size;
         }
-        return 0;
+        return size;
     }
 
     errmsg("no matched situation");
