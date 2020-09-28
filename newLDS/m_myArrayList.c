@@ -7,6 +7,7 @@
 int change_array_list(mAL* AL, int idx, item val) {
     if (idx < 0 || idx >= AL->size) {
         errmsg("wrong index");
+        printf("idx :: %d, size :: %d ,, in array\n", idx, AL->size);
         exit(-1);
     }
     AL->arr[idx] = val;

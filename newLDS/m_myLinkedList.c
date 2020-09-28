@@ -7,6 +7,7 @@ item search_linked_list(mLL* LL, int idx) {
     // 일단, 앞에서부터 순차적으로 탐색
     if (idx < 0 || idx >= LL->size) {
         errmsg("invalid array length");
+        printf("idx :: %d, size :: %d ,, in linked\n", idx, LL->size);
         exit(-1);
     }
 
