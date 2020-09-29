@@ -2,7 +2,7 @@
 #include "common.h"
 /*
 Linked List
-v.0.1
+v.0.2
 단방향, 동적할당
 */
 
@@ -12,8 +12,9 @@ typedef myint item; // 모두 같은 자료형을 사용하도록,,
 
 // LinkedList's Node
 typedef struct _my_LinkedList_node {
-    item val;	// default 0, can only 0 or positive
+    item val;	// default 0
     struct _my_LinkedList_node* next;
+    struct _my_linkedList_node* prev;
 }mLLnd;
 
 // LinkedList
@@ -30,8 +31,6 @@ typedef struct _my_LinkedList {
 mLL* create_linked_list(int size); 
 // LinkedList 삭제
 int destroy_linked_list(mLL* LL);
-// 리스트 크기 변경
-int rsize_linked_list(mLL* LL, int size);
 
 
 /* manage function */
@@ -39,9 +38,11 @@ int rsize_linked_list(mLL* LL, int size);
 // 값 바꾸기
 int change_linked_list(mLL* LL, int idx, item val);
 // idx위치에 있는 item 검색,
-item search_linked_list(mLL* LL, int idx);
+item at_linked_list(mLL* LL, int idx);
 // idx위치에, item 삽입, 
 int insert_linked_list(mLL* LL, int idx, item val);
+// 뒤에 붙이기
+int append_linked_list(mLL* LL, item val);
 // idx위치에 있는 item 삭제,
 int remove_linked_list(mLL* LL, int idx);
 

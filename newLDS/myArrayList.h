@@ -2,7 +2,7 @@
 #include "common.h"
 /*
 Array List
-v.0.1
+v.0.2
 동적할당
 */
 
@@ -24,8 +24,6 @@ typedef struct _my_ArrayList {
 mAL* create_array_list(int size);
 // ArrayList 삭제.
 int destroy_array_list(mAL* AL);
-// 리스트 크기 변경
-int rsize_array_list(mAL* AL, int size);
 
 
 /* manage function */
@@ -33,9 +31,11 @@ int rsize_array_list(mAL* AL, int size);
 // 값 바꾸기
 int change_array_list(mAL* AL, int idx, item val);
 // idx위치에 있는 item 검색,
-item search_array_list(mAL* AL, int idx);
+item at_array_list(mAL* AL, int idx);
 // idx위치에, item 삽입, 
 int insert_array_list(mAL* AL, int idx, item val);
+// 뒤에 붙이기
+int append_array_list(mAL* AL, item val);
 // idx위치에 있는 item 삭제,
 int remove_array_list(mAL* AL, int idx);
 
