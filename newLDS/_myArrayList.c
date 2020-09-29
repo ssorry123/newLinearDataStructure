@@ -26,13 +26,13 @@ int _double_capacity(mAL* AL) {
     return 0;
 }
 
-void print_array_list_all(mAL* AL) {
-    printf("print array list\t size : %d, capacity : %d\n", AL->size, AL->capacity);
+void print_array_list_all(FILE* const _Stream, mAL* AL) {
+    fprintf(_Stream, "print array list\t size : %d, capacity : %d\n", AL->size, AL->capacity);
 
     for (int i = 0; i < AL->size; ++i) {
-        printf("[%5d] == %5d\n", i, AL->arr[i]);
+        fprintf(_Stream, "[%5d] == %5d\n", i, AL->arr[i]);
     }
 
-    printf("\nprint end\n");
+    fprintf(_Stream, "\nprint end\n");
 
 }

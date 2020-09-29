@@ -48,7 +48,8 @@ int remove_linked_list(mLL* LL, int idx);
 
 
 //// sub function
-void print_linked_list_all(mLL * LL);
+
+void print_linked_list_all(FILE *const _Stream, mLL * LL);
 mLLnd* _make_mLLnd(item val);
 mLLnd* _find_pointer(mLL* LL, int idx);
 int _del_from_to_NULL(mLLnd* pointer);

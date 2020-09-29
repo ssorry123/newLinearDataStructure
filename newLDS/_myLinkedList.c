@@ -4,16 +4,16 @@
 
 // print all
 // O(n)
-void print_linked_list_all(mLL* LL) {
-    printf("print linked list\t size : %d\n", LL->size);
+void print_linked_list_all(FILE* const _Stream, mLL* LL) {
+    fprintf(_Stream, "print linked list\t size : %d\n", LL->size);
 
     mLLnd* p = LL->begin;
     for (int i = 0; i < LL->size; ++i) {
-        printf("[%5d] == %5d\n", i, p->val);
+        fprintf(_Stream, "[%5d] == %5d\n", i, p->val);
         p = p->next;
     }
 
-    printf("\nprint end\n");
+    fprintf(_Stream, "\nprint end\n");
 }
 
 // make a node and return pointer, done

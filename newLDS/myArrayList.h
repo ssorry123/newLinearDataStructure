@@ -42,5 +42,6 @@ int remove_array_list(mAL* AL, int idx);
 
 
 /* sub function */
-void print_array_list_all(mAL* AL);
+
+void print_array_list_all(FILE *const _Stream, mAL* AL);
 int _double_capacity(mAL* AL);
