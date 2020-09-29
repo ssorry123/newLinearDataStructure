@@ -6,7 +6,8 @@
 
 
 mAL* create_array_list(int size) {
-    if (size <= 0 || size > MAXSIZE) {
+    // size가 0인 리스트도 생성할 수 있다
+    if (size < 0 || size > MAXSIZE) {
         errmsg("wrong size");
         exit(-1);
     }
@@ -18,9 +19,10 @@ mAL* create_array_list(int size) {
     }
 
     // 용량 설정
-    int capacity = size * 2;
+    int capacity = (size+1) * 2;
     if (capacity > MAXSIZE)
         capacity = MAXSIZE;
+
     ret->size = size;
     ret->capacity = capacity;
 
@@ -46,29 +48,4 @@ int destroy_array_list(mAL* AL) {
     free(AL->arr);
     free(AL);
     return 0;
-}
-
-int rsize_array_list(mAL* AL, int size) {
-    // 최대 크기 초과
-    if (size > MAXSIZE) {
-        errmsg("large Size");
-        exit(-1);
-    }
-    // 크기 변경이 없음
-    if (size == AL->size) {
-        return size;
-    }
-    // 0이하인 경우 파괴시킴
-    if (size <= 0) {
-        printf("warning!!, Array list destroyed");
-        destroy_array_list(AL);
-        return 0;
-    }
-
-    mAL* ret = create_array_list(size);
-    memmove(ret->arr, AL->arr, sizeof(item) * size);
-    destroy_array_list(AL);
-    AL = ret;
-
-    return AL->size;
 }

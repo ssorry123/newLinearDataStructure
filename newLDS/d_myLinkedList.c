@@ -4,7 +4,8 @@
 
 
 mLL* create_linked_list(int size) {
-    if (size <= 0 || size > MAXSIZE) {
+    // 크기가 0인 리스트도 생성할 수 있다
+    if (size < 0 || size > MAXSIZE) {
         errmsg("wrong size");
         exit(-1);
     }
@@ -15,18 +16,17 @@ mLL* create_linked_list(int size) {
         exit(-1);
     }
 
-    item init_item = 0;
-
-    mLLnd* left, * tmp, * right;
-    left = right = _make_mLLnd(init_item);
-    for (int i = 1; i < size; ++i) {
-        tmp = _make_mLLnd(init_item);
-        right->next = tmp;
-        right = tmp;
+    mLLnd* tmp;
+    // size+1개의 노드를 만든다
+    // 리스트의 end가 가리키는 노드는 사용하지 않는 노드이다
+    tmp = _make_mLLnd(0);
+    ret->begin = tmp;
+    for (int i = 0; i < size; ++i) {
+        tmp->next = _make_mLLnd(0);
+        tmp->next->prev = tmp;
+        tmp = tmp->next;
     }
-
-    ret->begin = left;
-    ret->end = right;
+    ret->end = tmp;
     ret->size = size;
 
     return ret;
@@ -44,45 +44,3 @@ int destroy_linked_list(mLL* LL) {
     return 0;
 }
 
-
-int rsize_linked_list(mLL* LL, int size) {
-    // 최대 크기 초과
-    if (size > MAXSIZE) {
-        errmsg("large Size");
-        exit(-1);
-    }
-    // 크기 변경이 없음
-    if (size == LL->size) {
-        return size;
-    }
-    // 0이하인 경우 파괴시킴
-    if (size <= 0) {
-        printf("warning!!, linked list destroyed");
-        destroy_linked_list(LL);
-        return 0;
-    }
-
-    // 크기를 줄이는 경우, 해당 크기 이후는 파괴시킨다
-    if (size < LL->size) {
-        LL->end = _find_pointer(LL, size - 1);	// end 포인터 변경
-        _del_from_to_NULL(LL->end->next);	// end의 next부터 모두 삭제
-        LL->end = NULL;							// end->next 변경
-        LL->size = size;
-        return size;
-    }
-
-    if (size > LL->size) {
-        int inc = LL->size - size;
-        mLLnd* tmp;
-        for (int i = 0; i < inc; ++i) {
-            tmp = _make_mLLnd(0);
-            LL->end->next = tmp;
-            LL->end = tmp;
-            ++LL->size;
-        }
-        return size;
-    }
-
-    errmsg("no matched situation");
-    exit(-1);
-}

@@ -25,6 +25,7 @@ mLLnd* _make_mLLnd(item val) {
     }
     ret->val = val;
     ret->next = NULL;
+    ret->prev = NULL;
     return ret;
 }
 
@@ -41,7 +42,7 @@ mLLnd* _find_pointer(mLL* LL, int idx) {
 }
 
 
-// 단뱡향 리스트에서, 해당 pointer부터 끝까지 삭제
+// 리스트에서, 해당 pointer부터 끝까지 삭제
 int _del_from_to_NULL(mLLnd* pointer) {
     mLLnd* p = pointer, * tmp = NULL;
 
