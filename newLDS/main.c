@@ -2,14 +2,11 @@
 #include "common.h"
 #include "test.h"
 
-int main1();
+int main1();    // test v.0.2, 2020/09/29
 
 // testing 테스트 중
 int main() {
     printf("Hellow world!!!\n");
-
-    test_rsize(100);
-    
 
 
     return 0;
@@ -25,7 +22,10 @@ int main1() {
     test_insert(300);
     // 항상 시작에 0~299 삽입
     test_insert2(300);
-
+    // 빈 리스트에, 순차적인 숫자 append
+    test_append(300);
+    // 짝수만 삭제
+    test_remove2(300);
 
     return 0;
 }
