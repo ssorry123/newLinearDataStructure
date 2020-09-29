@@ -48,21 +48,31 @@
 
 ### ㅁ Info of file (mean,, current status)
 
-### Common Linked and Array
+### Linked and Array(v.0.2)
+```
+## changed
+- del resize List function by User
+- can make empty List (size 0)
+- insertion can do only in index [0,size)
+- instead of, add append function
+- change name, search function -> at function
+- Doubly Linked List
+```
+### Linked and Array(v.0.1)
+```
+## Common 
 - no, zero size List
 - for using, have to declare List Size  
 - can change size by user
 - insertion and deletion can cause auto size changes (+-1)
 - one-thread (no lock)
 - append(like python list method) implemented in insert
-#### Linked (v.0.1)  
+### Linked (v.0.1)  
 - singlely linked list
 - size == capacity
-#### Array (v.0.1)
+### Array (v.0.1)
 - size != capacity
-
-<br>
-
+```
 ### nLDS (v.0.0)
 - 
 
