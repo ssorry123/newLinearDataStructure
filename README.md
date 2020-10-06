@@ -12,7 +12,8 @@
 ##### with the good points stated below,
 ##### without the so-so points stated below,
 ###### *of course, nLDS should be no great waste of space*    
-
+###### *there is already good SkipList,,, but,,*
+<br>
     
 #### ordinary,,
 1. Linked list
