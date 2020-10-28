@@ -6,7 +6,7 @@ int main1();    // test v.0.2, 2020/09/29
 
 // testing 테스트 중
 int main() {
-    printf("Hellow world!!!\n");
+
 
 
     return 0;

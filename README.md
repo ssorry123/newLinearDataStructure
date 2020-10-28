@@ -1,11 +1,20 @@
 ## newLinearDataStructure
-###### nLDS
+##### nLDS
 ###### first self-directed project
 ###### *for now, using C,,, using python or cc later if possible*
 ###### 코드의 주석은 주로 한국어 (comment in codes -> Korean)
 <br>
 
 ---
+### develop Data Structure
+1. Main
+    - nLDS
+    - ArrayList and LinkedList
+2. Sub
+    - BitList
+
+---
+<br>
 
 ### ㅁ What
 #### **nLDS = Linked (List) + Array (List)**
