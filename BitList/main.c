@@ -1,6 +1,7 @@
 #pragma once
 #include <stdio.h>
 #include "myBitList.h"
+#define print_func() printf("test ::%s\n", __FUNCTION__)
 
 void test_create_set_destroy();
 void test_set_TRUE();
@@ -8,14 +9,15 @@ void test_get();
 void test_not();
 int main() {
 
-    // test_create_set_destroy();
-    // test_set_TRUE();
-    // test_get();
+    test_create_set_destroy();
+    test_set_TRUE();
+    test_get();
     test_not();
 
     return 0;
 }
 void test_not() {
+    print_func();
     BitList* bl = create_BitList(50, FALSE);
 
     set_BitList(bl, 5, TRUE);
@@ -33,6 +35,8 @@ void test_not() {
     return;
 }
 void test_get() {
+    print_func();
+
     // create test
     BitList* bl1 = create_BitList(25, FALSE);
     BitList* bl2 = create_BitList(25, TRUE);
@@ -65,9 +69,10 @@ void test_get() {
     // destroy
     destroy_BitList(bl1);
     destroy_BitList(bl2);
-    printf("\n");
+    printf("\n\n");
 }
 void test_set_TRUE() {
+    print_func();
     // create test
     BitList* bl = create_BitList(50, TRUE);
     print_BitList(bl, 5);
@@ -89,6 +94,7 @@ void test_set_TRUE() {
     printf("\n");
 }
 void test_create_set_destroy() {
+    print_func();
     // create test
     BitList* bl = create_BitList(50, FALSE);
     print_BitList(bl, 5);
