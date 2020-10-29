@@ -30,3 +30,11 @@ int print_BitList(BitList* bl, uint32_t jump) {
     printf("\n");
     return TRUE;
 }
+
+int _check_BitList(BitList* bl, size_t idx) {
+    if (bl == NULL || idx < 0 || idx >= bl->len) {
+        printf("wrong index\n");
+        return FALSE;
+    }
+    return TRUE;
+}
